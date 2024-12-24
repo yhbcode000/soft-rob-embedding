@@ -1,0 +1,18 @@
+simulation:
+  model_path: E:\Desktop\soft-rob-embedding\resource\2Dspiral robot\2Dtendon10deg.xml
+  target: [0, 0, -100]
+  timestep: 0.01
+  max_depth: 15
+  tolerance: 0.1
+  show_visualization: true
+
+  # iLQR-specific parameters
+  ilqr_horizon: 100 # Number of timesteps in the planning horizon
+  ilqr_iterations: 100 # Maximum iLQR solver iterations
+  ilqr_alpha: 0.01 # Regularization / line-search parameter
+
+logging:
+  level: INFO
+  filename: "robot_control.log"
+  filemode: "w"
+  format: "%(asctime)s - %(levelname)s - %(message)s"
