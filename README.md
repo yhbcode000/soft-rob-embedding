@@ -13,25 +13,45 @@ Unifying the representation of robot statuses and actions with natural language 
 
 ## Challenges 🤔
 
-**Defining Actions in Non-Mimic Robots**
+<details>
+<summary>Defining Actions in Non-Mimic Robots</summary>
+<blockquote>
 
 When planning robot actions in the action space, it is necessary to predefine semantically meaningful actions. This is relatively straightforward for humanoid and robot dogs but becomes challenging for non-mimic robots, complex robots, and tangibles (e.g., soft robots). This project aims to overcome this challenge by unifying robot states and language embeddings to define actions in abstract, LLM-understandable representations.
+</blockquote>
 
-**Trajectory Planning in Soft Robots**
+</details>
+
+<details>
+<summary>Trajectory Planning in Soft Robots</summary>
+<blockquote>
 
 In typical robotic systems, trajectories can be planned by interpolating between two states and following the trajectory. However, in soft robots, trajectory planning is complicated by the state's dependency on historical movements. This requires projecting the control (whether predefined or abstract) and time-space into the robot's state space. To address this, the project leverages reinforcement learning (RL) to achieve a suboptimal solver, reducing computational complexity to O(n).
+</blockquote>
+
+</details>
 
 ---
 
 ## FAQ ❓
 
-**How does this differ from end-to-end robot control models?**
+<details>
+<summary>How does this differ from end-to-end robot control models?</summary>
+<blockquote>
 
 Soft robots have significantly higher degrees of freedom (DoF) than rigid robots, making direct simulation and RL application nearly impossible. Common approaches simplify soft robots by treating them as rigid robots or relying on predefined actions to manage complexity. While effective, these approaches limit the possibilities of soft robotics. By expanding the action space with trajectory planning models, we aim to realize the unique potential of soft robots, enabling conditional reflection and richer interactions.
+</blockquote>
 
-**What is the next step for this project?**
+</details>
+
+<details>
+<summary>What is the next step for this project?</summary>
+<blockquote>
 
 Utilizing multi-agent knowledge emergence to develop action embeddings. Exploring Human-Robot Interaction (HRI) scenarios to test system integration with human users. Supporting subsystems such as intent recognition will also be investigated to unify multi-agent and HRI frameworks.
+</blockquote>
+
+</details>
 
 ---
 
