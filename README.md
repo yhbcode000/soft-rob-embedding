@@ -9,6 +9,8 @@ Unifying the representation of robot statuses and actions with natural language 
 - **Unified Embeddings**: Combine robot states and actions with natural language for seamless planning.
 - **Soft Robot Trajectory Planning**: Enable efficient control and natural movement for soft robots.
 
+![image](https://github.com/user-attachments/assets/820be089-e4d7-4768-8f12-93435cc9fc68)
+
 ---
 
 ## Challenges 🤔
