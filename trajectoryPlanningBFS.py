@@ -176,16 +176,33 @@ def main(cfg: DictConfig):
 
     initial_state = State.from_mjdata(data)
 
+    # action_space = [
+    #     np.array([0.0, 0.0]),   # 1) No tension (fully relaxed)
+    #     np.array([0.5, 0.0]),   # 2) Half tension on cable1, none on cable2
+    #     np.array([0.0, 0.5]),   # 3) None on cable1, half tension on cable2
+    #     np.array([0.5, 0.5]),   # 4) Moderate equal tension on both cables
+    #     np.array([1.0, 0.0]),   # 5) Full tension on cable1, none on cable2
+    #     np.array([0.0, 1.0]),   # 6) None on cable1, full tension on cable2
+    #     np.array([0.3, 0.7]),   # 7) Imbalanced tension favoring cable2
+    #     np.array([0.7, 0.3])    # 8) Imbalanced tension favoring cable1
+    # ]
     action_space = [
-        np.array([0.0, 0.0]),   # 1) No tension (fully relaxed)
-        # np.array([0.5, 0.0]),   # 2) Half tension on cable1, none on cable2
-        # np.array([0.0, 0.5]),   # 3) None on cable1, half tension on cable2
-        np.array([0.5, 0.5]),   # 4) Moderate equal tension on both cables
-        np.array([1.0, 0.0]),   # 5) Full tension on cable1, none on cable2
-        np.array([0.0, 1.0]),   # 6) None on cable1, full tension on cable2
-        np.array([0.3, 0.7]),   # 7) Imbalanced tension favoring cable2
-        np.array([0.7, 0.3])    # 8) Imbalanced tension favoring cable1
+        np.array([0.0, 0.0, 0.0]),   # 1) No tension (fully relaxed)
+        np.array([0.5, 0.0, 0.0]),   # 2) Half tension on cable1, none on cable2 and cable3
+        np.array([0.0, 0.5, 0.0]),   # 3) None on cable1, half tension on cable2, none on cable3
+        np.array([0.0, 0.0, 0.5]),   # 4) None on cable1 and cable2, half tension on cable3
+        np.array([0.5, 0.5, 0.0]),   # 5) Moderate equal tension on cable1 and cable2, none on cable3
+        np.array([0.5, 0.0, 0.5]),   # 6) Moderate tension on cable1 and cable3, none on cable2
+        np.array([0.0, 0.5, 0.5]),   # 7) Moderate tension on cable2 and cable3, none on cable1
+        np.array([1.0, 0.0, 0.0]),   # 8) Full tension on cable1, none on cable2 and cable3
+        np.array([0.0, 1.0, 0.0]),   # 9) Full tension on cable2, none on cable1 and cable3
+        np.array([0.0, 0.0, 1.0]),   # 10) Full tension on cable3, none on cable1 and cable2
+        np.array([0.3, 0.3, 0.7]),   # 11) Imbalanced tension favoring cable3
+        np.array([0.7, 0.3, 0.3]),   # 12) Imbalanced tension favoring cable1
+        np.array([0.3, 0.7, 0.3]),   # 13) Imbalanced tension favoring cable2
+        np.array([0.5, 0.5, 0.5])    # 14) Equal moderate tension on all three cables
     ]
+
 
     planner = TrajectoryPlanning(model, data, initial_state, action_space)
 

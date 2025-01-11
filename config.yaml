@@ -1,5 +1,5 @@
 simulation:
-  model_path: E:\Desktop\soft-rob-embedding\resource\2Dspiral robot\2Dtendon10deg.xml
+  model_path: /home/shirox/workspace/soft-rob-embedding/resource/3cable spiral robot/spiral_3D.xml
   target: [0, 0, -100]
   timestep: 0.01
   max_depth: 15
